@@ -1,15 +1,22 @@
 const app = angular.module('MyApp', []);
 
-app.controller('MyController', ['$http', function($http){
-    this.indexOfEditFormToShow = null;
-    this.getMovies = function(){
-        $http({
-            method:"GET",
-            url:"/movies"
-        }).then((res) => {
-            this.movies = res.data;
-        });
-    };
+    app.controller('MyController', ['$http', function($http) {
+ // this.foo = 'bar';
+ this.movie =[];
+ this.movieTitle = '';
+ this.baseURL = 'http://www.omdbapi.com/?';
+ this.apikey = 'apikey=' + '87f395d5';
+ this.query = 't=';
+ this.searchURL = this.baseURL + this.apikey + '&' + this.query;
+ console.log(this.searchURL);
+ this.getMovies = () => {
+   $http({
+   method: 'GET',
+   url: this.searchURL + this.movieTitle
+ }).then((response) => {
+   this.movie = response.data;
+});
+}
     this.createMovie = function(){
         $http({
             method:'POST',
