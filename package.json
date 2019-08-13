@@ -19,7 +19,6 @@
   "homepage": "https://github.com/cquiett/julieandcarramah_hwk#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "nodemon": "^1.19.1"
-  },
-  "keywords": []
+    "mongoose": "^5.6.9"
+  }
 }

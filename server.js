@@ -1,10 +1,18 @@
-const express = require('express')
-const app = express()
-const PORT = 3000
+const express = require('express');
+const app = express();
+const mongoose = require('mongoose');
+
+app.use(express.json());
+app.use(express.static('public'));
+
+const moviesController = require('./controllers/movies.js');
+app.use('/movies', moviesController);
 
 
-app.get('/', (req, res) => {
-  res.send('hello world')
-})
-
-app.listen(PORT, () => console.log('auth happening on port', PORT))
+mongoose.connect('mongodb://localhost:27017/movies', {useNewUrlParser:true});
+mongoose.connection.once('open', () => {
+  console.log('connected to mongoose...');
+});
+app.listen(3001, () => {
+  console.log('listening');
+});

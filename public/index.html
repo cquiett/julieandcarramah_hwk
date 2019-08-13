@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app="MyApp">
+    <head>
+        <meta charset="utf-8">
+        <title>Movies</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js" charset="utf-8"></script>
+        <script src="/js/app.js" charset="utf-8"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- couldn't get personal CSS to work -->
+        <link rel="stylesheet" href="/css/app.css">
+    </head>
+    <body ng-controller="MyController as ctrl">
+        <div class="container">
+            <header>
+                <h1>Movies</h1>
+                <h2>{{ctrl.movie.Title}} {{ctrl.movie.Year}}</h2>
+            </header>
+            <div class="row">
+                <form ng-submit="ctrl.createMovie()">
+                  <input type="text" ng-model="ctrl.title" placeholder="title"/>
+                  <input ng-model="ctrl.url" type="text" placeholder="url"/>
+                  <input class="waves-effect waves-light btn-large" type="submit" value="Create Movie">
+                </form>
+            </div>
+            <ul class="collection">
+                <div class="row red collection-item" ng-repeat="movie in ctrl.movies">
+                        <div class="col s6">
+                            <a href="http://{{movie.url}}" target="_"><h4>{{movie.title}}</h4></a>
+                        </div>
+                        <div class="col s3">
+                            <a class="waves-effect white waves-light btn-flat btn-large" ng-click="ctrl.deleteMovie(movie)"><i class="material-icons large">delete_forever</i></a>
+                        </div>
+
+                        <a
+                            class="waves-effect waves-light btn-large"
+                            href="#"
+                            ng-if="$index !== ctrl.indexOfEditFormToShow"
+                            ng-click="ctrl.indexOfEditFormToShow = $index"
+                            >Edit
+                        </a>
+
+                    <form
+                        ng-if="$index === ctrl.indexOfEditFormToShow"
+                        ng-submit="ctrl.editMovie(movie)">
+                        <input
+                            type="text"
+                            ng-model="ctrl.updatedTitle"
+                            placeholder="{{movie.title}}">
+                        <input
+                            type="text"
+                            ng-model="ctrl.updatedUrl"
+                            placeholder="{{movie.url}}">
+                        <input
+                            class="waves-effect waves-light btn-large"
+                            type="submit"
+                            value="Save Changes">
+                    </form>
+                </div>
+            </ul>
+        </div>
+    </body>
+</html>
