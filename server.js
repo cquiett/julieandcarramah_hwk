@@ -13,6 +13,6 @@ mongoose.connect('mongodb://localhost:27017/movies', {useNewUrlParser:true});
 mongoose.connection.once('open', () => {
   console.log('connected to mongoose...');
 });
-app.listen(3000, () => {
+app.listen(3001, () => {
   console.log('listening');
 });

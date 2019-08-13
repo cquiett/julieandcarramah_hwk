@@ -28,7 +28,7 @@
                             <a href="http://{{movie.url}}" target="_"><h4>{{movie.title}}</h4></a>
                         </div>
                         <div class="col s3">
-                            <a class="waves-effect white waves-light btn-flat btn-large" ng-click="ctrl.deleteBookmark(bookmark)"><i class="material-icons large">delete_forever</i></a>
+                            <a class="waves-effect white waves-light btn-flat btn-large" ng-click="ctrl.deleteMovie(movie)"><i class="material-icons large">delete_forever</i></a>
                         </div>
 
                         <a
@@ -41,15 +41,15 @@
 
                     <form
                         ng-if="$index === ctrl.indexOfEditFormToShow"
-                        ng-submit="ctrl.editBookmark(bookmark)">
+                        ng-submit="ctrl.editMovie(movie)">
                         <input
                             type="text"
                             ng-model="ctrl.updatedTitle"
-                            placeholder="{{bookmark.title}}">
+                            placeholder="{{movie.title}}">
                         <input
                             type="text"
                             ng-model="ctrl.updatedUrl"
-                            placeholder="{{bookmark.url}}">
+                            placeholder="{{movie.url}}">
                         <input
                             class="waves-effect waves-light btn-large"
                             type="submit"
