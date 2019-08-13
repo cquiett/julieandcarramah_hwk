@@ -1,0 +1,23 @@
+{
+  "name": "julieandcarramah_hwk",
+  "version": "1.0.0",
+  "description": "w08d02 group assignment",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cquiett/julieandcarramah_hwk.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cquiett/julieandcarramah_hwk/issues"
+  },
+  "homepage": "https://github.com/cquiett/julieandcarramah_hwk#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
