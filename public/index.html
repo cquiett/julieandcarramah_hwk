@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" ng-app="MyController">
+<html lang="en" dir="ltr" ng-app="MyApp">
     <head>
         <meta charset="utf-8">
         <title>Movies</title>
@@ -7,10 +7,11 @@
         <script src="js/app.js" charset="utf-8"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <!-- personal CSS is working now -->
+
         <link rel="stylesheet" href="/css/app.css">
     </head>
     <body ng-controller="MyController as ctrl">
+
         <div class="container">
             <header>
                 <h1>Create a Movie</h1>
@@ -29,7 +30,7 @@
                       type="text"
                       placeholder="Rating"
                       ng-model="ctrl.rating">
-                  <input class="btn-flat" type="submit" value="Create Movie">
+                  <input type="submit" value="Create Movie">
                 </form>
             </div>
             <div ng-repeat="movie in ctrl.movies">
@@ -66,8 +67,6 @@
                 </div>
             </div>
         </div>
-        <!-- Materialize JS -->
-        <script type="text/javascript" src="js/materialize.min.js"></script>
-    </body>
+
     </body>
 </html>

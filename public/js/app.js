@@ -1,3 +1,5 @@
+console.log("connected to app.js");
+
 const app = angular.module('MyApp', []);
 
 app.controller('MyController', ['$http', function($http){
@@ -33,7 +35,7 @@ app.controller('MyController', ['$http', function($http){
         data: {
           title: this.updatedTitle,
           year: this.updatedYear,
-          rating: this.updatedRating,
+          rating: this.updatedRating
         }
       }).then(function() {
         controller.getMovies();
@@ -46,7 +48,8 @@ app.controller('MyController', ['$http', function($http){
           url: '/movies/' + movie._id,
           data:{
             title: this.updatedTitle,
-            url2: this.updatedUrl2
+            year: this.updatedYear,
+            rating: this.updatedRating
           }
         }).then(function(){
           controller.getMovies();
