@@ -1,4 +1,4 @@
-console.log("connected to app.js");
+// console.log("connected to app.js");
 
 const app = angular.module('MyApp', []);
 
