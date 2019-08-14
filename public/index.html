@@ -17,9 +17,10 @@
             </header>
             <div class="row">
                 <form ng-submit="ctrl.createMovie()">
-                  <input type="text" ng-model="ctrl.title" placeholder="title"/>
-                  <input ng-model="ctrl.url" type="text" placeholder="url"/>
-                  <input class="waves-effect waves-light btn-large" type="submit" value="Create Movie">
+                  <input type="text" ng-model="ctrl.title" placeholder="Title"/>
+                  <input ng-model="ctrl.year" type="text" placeholder="Year"/>
+                  <input ng-model="ctrl.rating" type="text" placeholder="Rating"/>
+                  <input class="waves-effect waves-light btn-large" type="submit" value="Find Movie">
                 </form>
             </div>
             <ul class="collection">

@@ -1,7 +1,7 @@
 {
-  "name": "julieandcarramah_hwk",
+  "name": "h-j-inc",
   "version": "1.0.0",
-  "description": "w08d02 group assignment",
+  "description": "Collaboration effort",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,14 +9,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cquiett/julieandcarramah_hwk.git"
+    "url": "git@git.generalassemb.ly:jwaltz/H-J-Inc.git"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/cquiett/julieandcarramah_hwk/issues"
-  },
-  "homepage": "https://github.com/cquiett/julieandcarramah_hwk#readme",
   "dependencies": {
     "express": "^4.17.1",
     "mongoose": "^5.6.9"

@@ -1,7 +1,9 @@
 const app = angular.module('MyApp', []);
 
 app.controller('MyController', ['$http', function($http){
-    this.indexOfEditFormToShow = null;
+    const controller = this;
+    //
+    // this.indexOfEditFormToShow = null;
     this.getMovies = function(){
         $http({
             method:"GET",
@@ -16,12 +18,28 @@ app.controller('MyController', ['$http', function($http){
             url:'/movies',
             data:{
             title: this.title,
-            url: this.url
+            year: this.year,
+            rating: this.rating
             }
         }).then(() => {
             this.getMovies();
         });
     };
+    this.editMovie = function(movie) {
+        console.log(movie);
+      $http({
+        method: 'PUT',
+        url: '/movies/' + movie._id,
+        data: {
+          title: this.updatedTitle,
+          year: this.updatedYear,
+          rating: this.updatedRating,
+        }
+      }).then(function() {
+        controller.getMovies();
+        controller.indexOfEditFormToShow = null
+      })
+    }
     this.deleteMovie = function(movie){
         $http({
             method: 'DELETE',
