@@ -30,7 +30,7 @@
                       type="text"
                       placeholder="Rating"
                       ng-model="ctrl.rating">
-                  <input type="submit" value="Create Movie">
+                  <input class="waves-effect waves-light btn-large" type="submit" value="Create Movie">
                 </form>
             </div>
             <div ng-repeat="movie in ctrl.movies">
@@ -49,20 +49,20 @@
                 </div>
                 <div class="row">
                     <form ng-submit="ctrl.editMovie(movie)">
-                        <input
+                        <input class="waves-effect waves-light btn-large"
                           type="text"
                           placeholder="Title"
                           ng-model="ctrl.updatedTitle">
-                        <input
+                        <input class="waves-effect waves-light btn-large"
                           type="text"
                           placeholder="Year"
                           ng-model="ctrl.updatedYear">
-                        <input
+                        <input class="waves-effect waves-light btn-large"
                           type="text"
                           placeholder="Rating"
                           ng-model="ctrl.updatedRating">
                         <i class="material-icons">edit</i>
-                      <input class="btn-flat" type="submit" value="Save Changes">
+                      <input class="waves-effect waves-light btn-large" type="submit" value="Save Changes">
                     </form>
                 </div>
             </div>
