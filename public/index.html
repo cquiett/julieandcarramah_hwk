@@ -7,13 +7,14 @@
         <script src="/js/app.js" charset="utf-8"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <!-- couldn't get personal CSS to work -->
+        <!-- personal CSS is working now -->
         <link rel="stylesheet" href="/css/app.css">
     </head>
     <body ng-controller="MyController as ctrl">
         <div class="container">
             <header>
                 <h1>Movies</h1>
+                <h2>{{ctrl.movie.title}} {{ctrl.movie.year}}</h2>
             </header>
             <div class="row">
                 <form ng-submit="ctrl.createMovie()">
@@ -24,9 +25,11 @@
                 </form>
             </div>
             <ul class="collection">
-                <div class="row red collection-item" ng-repeat="movie in ctrl.movies">
+                <div class="row red collection-item"
+                      ng-repeat="movie in ctrl.movies"
+                      ng-class="(movie.url2) ? 'url2': '' ">
                         <div class="col s6">
-                            <a href="http://{{movie.url}}" target="_"><h4>{{movie.title}}</h4></a>
+                            <a href="http://{{movie.url2}}" target="_"><h4>{{movie.title}}</h4></a>
                         </div>
                         <div class="col s3">
                             <a class="waves-effect white waves-light btn-flat btn-large" ng-click="ctrl.deleteMovie(movie)"><i class="material-icons large">delete_forever</i></a>
@@ -49,8 +52,8 @@
                             placeholder="{{movie.title}}">
                         <input
                             type="text"
-                            ng-model="ctrl.updatedUrl"
-                            placeholder="{{movie.url}}">
+                            ng-model="ctrl.updatedUrl2"
+                            placeholder="{{movie.url2}}">
                         <input
                             class="waves-effect waves-light btn-large"
                             type="submit"

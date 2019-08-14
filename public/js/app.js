@@ -42,11 +42,17 @@ app.controller('MyController', ['$http', function($http){
     }
     this.deleteMovie = function(movie){
         $http({
-            method: 'DELETE',
-            url: '/movies/' + movie._id
-        }).then(() => {
-            this.getMovies();
-        });
-    };
-this.getMovies();
+          method:"PUT",
+          url: '/movies/' + movie._id,
+          data:{
+            title: this.updatedTitle,
+            url2: this.updatedUrl2
+          }
+        }).then(function(){
+          controller.getMovies();
+          controller.indexOfEditFormToShow = null;
+        })
+      }
+
+    this.getMovies();
 }]);
